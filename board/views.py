@@ -7,7 +7,7 @@ from json.decoder import JSONDecodeError
 from board.models     import Board
 from users.decorator  import SignIn_decorator
 
-class PostView(View):
+class BoardView(View):
     @SignIn_decorator
     def post(self, request):
         try :
@@ -53,7 +53,7 @@ class PostView(View):
 
         return JsonResponse({'board_list' : board_list}, status=200)
 
-class PostDetailView(View):
+class BoardDetailView(View):
     def get(self, request, board_id):
         try:
             if not Board.objects.filter(id = board_id).exists():
