@@ -32,7 +32,7 @@ class BoardView(View):
     
     def get(self, request):
         offset = int(request.GET.get("offset",0))
-        limit  = int(request.GET.get("limit",100))
+        limit  = int(request.GET.get("limit",10))
         sort   = request.GET.get('sort')   
         
         limit     = offset + limit
